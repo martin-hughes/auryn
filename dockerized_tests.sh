@@ -5,9 +5,10 @@ set -o nounset
 set -o pipefail
 
 TEST_IMAGES=(
-  "php:7.4.28-cli-buster"
-  "php:8.0.16-cli-buster"
-  "php:8.1.3-cli-buster"
+  "php:7.4.30-cli-buster"
+  "php:8.0.23-cli-buster"
+  "php:8.1.10-cli-buster"
+  "php:8.2.0RC2-cli-buster"
 )
 
 FAILED=()
