@@ -3,7 +3,7 @@
 auryn is a recursive dependency injector. Use auryn to bootstrap and wire together
 S.O.L.I.D., object-oriented PHP applications.
 
-##### How It Works
+## How It Works
 
 Among other things, auryn recursively instantiates class dependencies based on the parameter
 type-hints specified in class constructor signatures. This requires the use of Reflection. You may
@@ -44,32 +44,33 @@ caches any reflections it generates to minimize the potential performance impact
 
 ## Requirements and Installation
 
-- auryn requires PHP 5.3 or higher.
+- auryn requires PHP 7.4 or higher. It is tested on at least one point release from each of PHP 7.4, 8.0, 8.1 and 8.2 
+  (RC)
 
-#### Installation
+### Installation
 
-###### Github
+#### Github
 
 You can clone the latest auryn iteration at anytime from the github repository:
 
 ```bash
-$ git clone git://github.com/rdlowrey/auryn.git
+$ git clone git://github.com/martin-hughes/auryn.git
 ```
 
-###### Composer
+#### Composer
 
 You may also use composer to include auryn as a dependency in your projects `composer.json`. The relevant package is `rdlowrey/auryn`.
 
 Alternatively require the package using composer cli:
 
 ```bash
-composer require rdlowrey/auryn
+composer require martin-hughes/auryn
 ```
 
-##### Manual Download
+#### Manual Download
 
 Archived tagged release versions are also available for manual download on the project
-[tags page](https://github.com/rdlowrey/auryn/tags)
+[tags page](https://github.com/martin-hughes/auryn/tags)
 
 
 ## Basic Usage
@@ -97,7 +98,7 @@ $obj2 = $injector->make('SomeNamespace\MyClass');
 var_dump($obj2 instanceof SomeNamespace\MyClass); // true
 ```
 
-###### Concrete Type-hinted Dependencies
+### Concrete Type-hinted Dependencies
 
 If a class only asks for concrete dependencies you can use the Injector to inject them without
 specifying any injection definitions. For example, in the following scenario you can use the
@@ -126,7 +127,7 @@ var_dump($myObj->dep1 instanceof SomeDependency); // true
 var_dump($myObj->dep2 instanceof AnotherDependency); // true
 ```
 
-###### Recursive Dependency Instantiation
+### Recursive Dependency Instantiation
 
 One of the Injector's key attributes is that it recursively traverses class dependency trees to
 instantiate objects. This is just a fancy way of saying, "if you instantiate object A which asks for
@@ -166,7 +167,7 @@ this mold. Some classes will type-hint interfaces and abstract classes. Some wil
 parameters which offer no possibility of type-hinting in PHP. Still other parameters will be arrays,
 etc. In such cases we need to assist the Injector by telling it exactly what we want to inject.
 
-###### Defining Class Names for Constructor Parameters
+### Defining Class Names for Constructor Parameters
 
 Let's look at how to provision a class with non-concrete type-hints in its constructor signature.
 Consider the following code in which a `Car` needs an `Engine` and `Engine` is an interface:
@@ -230,7 +231,7 @@ $myObj = $injector->make('MyClass');
 > **NOTE:** Injecting instances where an abstract class is type-hinted works in exactly the same way
 as the above examples for interface type-hints.
 
-###### Using Existing Instances in Injection Definitions
+### Using Existing Instances in Injection Definitions
 
 Injection definitions may also specify a pre-existing instance of the requisite class instead of the
 string class name:
@@ -261,7 +262,7 @@ var_dump($myObj instanceof MyClass); // true
 you can achieve the same result by omitting the array key(s) and relying on parameter order rather
 than name. Like so: `$injector->define('MyClass', [$dependencyInstance]);`
 
-###### Specifying Injection Definitions On the Fly
+### Specifying Injection Definitions On the Fly
 
 You may also specify injection definitions at call-time with `Auryn\Injector::make`. Consider:
 
@@ -445,7 +446,7 @@ implication should be clear:
 > By sharing an instance of a class, `Auryn\Injector` will always use that instance when
 > provisioning classes that type-hint the shared class.
 
-###### A Simpler Example
+### A Simpler Example
 
 Let's look at a simple proof of concept:
 
@@ -513,7 +514,7 @@ In the above code we delegate instantiation of the `MyComplexClass` class to a c
 `$complexClassFactory`. Once this delegation is made, the Injector will return the results of the
 specified closure when asked to instantiate `MyComplexClass`.
 
-###### Available Delegate Types
+### Available Delegate Types
 
 Any valid PHP callable may be registered as a class instantiation delegate using
 `Auryn\Injector::delegate`. Additionally you may specify the name of a delegate class that
@@ -643,7 +644,7 @@ primary culprits is the misuse of such containers in the mainstream application 
 these frameworks warp their DICs into Service Locator anti-patterns. This is a shame because a
 good DIC should be the exact opposite of a Service Locator.
 
-###### auryn Is NOT A Service Locator!
+### auryn Is NOT A Service Locator!
 
 There's a galaxy of differences between using a DIC to wire together your application versus
 passing the DIC as a dependency to your objects (Service Locator). Service Locator (SL) is an
