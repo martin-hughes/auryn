@@ -6,7 +6,7 @@ class TestInstance {
 
 class InjectorTestNullableParams
 {
-  public ?TestInstance $string;
+  public ?TestInstance $instance;
 
   public function __construct(?TestInstance $instance = null)
   {
