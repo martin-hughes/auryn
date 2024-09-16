@@ -3,6 +3,27 @@
 auryn is a recursive dependency injector. Use auryn to bootstrap and wire together
 S.O.L.I.D., object-oriented PHP applications.
 
+## Maintenance Status
+
+*This package is now in a maintenance-only phase.* I'll still be making bug fixes and minor 
+updates to support new PHP versions. In a new project I'd suggest using an implementation of
+PSR-11.
+
+The original version of this package - `rdlowrey/auryn` - has effectively been abandoned. The 
+current maintenance status of that package hasn't even make into `master` - it's only made it to 
+the [dev branch](https://github.com/rdlowrey/auryn/tree/dev)!
+
+Despite that, I still like this package even though it has relatively low utilisation these days. 
+My intent is to keep it tested and working on new PHP releases as they come out. This will involve
+minor updates to follow any feature deprecations.
+
+I also intend to keep it tested on as old a version of PHP as possible. The limiting factor is
+likely to be PHPUnit - eventually the version currently used (9.6) will not support the newest
+version of PHP, and I'll have to upgrade. At that point, this package will no longer be tested on
+the oldest versions of PHP, and may break. I'll annotate this in the `composer.json`.
+
+Significant API changes and new features are very unlikely to make it into the package. 
+
 ## How It Works
 
 Among other things, auryn recursively instantiates class dependencies based on the parameter
