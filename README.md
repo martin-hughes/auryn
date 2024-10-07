@@ -65,8 +65,8 @@ caches any reflections it generates to minimize the potential performance impact
 
 ## Requirements and Installation
 
-- auryn requires PHP 7.4 or higher. It is tested on at least one point release from each of PHP 7.4, 8.0, 8.1 and 8.2 
-  (RC)
+- auryn requires PHP 7.4 or higher. It is tested on at least one point release from each of PHP 7.4, 8.0 - 8.3 and
+  8.4 beta.
 
 ### Installation
 
@@ -80,7 +80,7 @@ $ git clone git://github.com/martin-hughes/auryn.git
 
 #### Composer
 
-You may also use composer to include auryn as a dependency in your projects `composer.json`. The relevant package is `rdlowrey/auryn`.
+You may also use composer to include auryn as a dependency in your projects `composer.json`. The relevant package is `martin-hughes/auryn`.
 
 Alternatively require the package using composer cli:
 

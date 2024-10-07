@@ -48,7 +48,7 @@ class Injector
     private $delegates = array();
     private $inProgressMakes = array();
 
-    public function __construct(Reflector $reflector = null)
+    public function __construct(?Reflector $reflector = null)
     {
         $this->reflector = $reflector ?: new CachingReflector;
     }

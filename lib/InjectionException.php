@@ -5,12 +5,12 @@ namespace Auryn;
 class InjectionException extends InjectorException
 {
     public $dependencyChain;
-    
-    public function __construct(array $inProgressMakes, $message = "", $code = 0, \Exception $previous = null)
+
+    public function __construct(array $inProgressMakes, $message = "", $code = 0, ?\Exception $previous = null)
     {
         $this->dependencyChain = array_flip($inProgressMakes);
         ksort($this->dependencyChain);
-        
+
         parent::__construct($message, $code, $previous);
     }
 
@@ -20,13 +20,13 @@ class InjectionException extends InjectorException
     public static function fromInvalidCallable(
         array $inProgressMakes,
         $callableOrMethodStr,
-        \Exception $previous = null
+        ?\Exception $previous = null
     ) {
         $callableString = null;
 
         if (is_string($callableOrMethodStr)) {
             $callableString .= $callableOrMethodStr;
-        } else if (is_array($callableOrMethodStr) && 
+        } else if (is_array($callableOrMethodStr) &&
             array_key_exists(0, $callableOrMethodStr) &&
             array_key_exists(0, $callableOrMethodStr)) {
             if (is_string($callableOrMethodStr[0]) && is_string($callableOrMethodStr[1])) {
@@ -41,7 +41,7 @@ class InjectionException extends InjectorException
         }
 
         if ($callableString) {
-            // Prevent accidental usage of long strings from filling logs. 
+            // Prevent accidental usage of long strings from filling logs.
             $callableString = substr($callableString, 0, 250);
             $message = sprintf(
                 "%s. Invalid callable was '%s'",
