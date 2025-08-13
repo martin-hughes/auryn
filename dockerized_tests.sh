@@ -11,6 +11,7 @@ TEST_IMAGES=(
   "php:8.2.23-cli-bookworm"
   "php:8.3.11-cli-bookworm"
   "php:8.4.1-cli-bookworm"
+  "php:8.5.0alpha4-cli-bookworm"
 )
 
 FAILED=()
