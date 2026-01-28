@@ -7,11 +7,11 @@ set -o pipefail
 TEST_IMAGES=(
   "php:7.4.33-cli-buster"
   "php:8.0.30-cli-buster"
-  "php:8.1.29-cli-bookworm"
-  "php:8.2.23-cli-bookworm"
-  "php:8.3.11-cli-bookworm"
-  "php:8.4.1-cli-bookworm"
-  "php:8.5.0alpha4-cli-bookworm"
+  "php:8.1.34-cli-bookworm"
+  "php:8.2.30-cli-bookworm"
+  "php:8.3.30-cli-bookworm"
+  "php:8.4.17-cli-bookworm"
+  "php:8.5.2-cli-bookworm"
 )
 
 FAILED=()
