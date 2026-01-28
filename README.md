@@ -5,24 +5,20 @@ S.O.L.I.D., object-oriented PHP applications.
 
 ## Maintenance Status
 
-*This package is now in a maintenance-only phase.* I'll still be making bug fixes and minor 
-updates to support new PHP versions. In a new project I'd suggest using an implementation of
-PSR-11.
+*This package is abandoned.* I've decided to stop maintenance of this package for two reasons:
 
-The original version of this package - `rdlowrey/auryn` - has effectively been abandoned. The 
-current maintenance status of that package hasn't even make into `master` - it's only made it to 
-the [dev branch](https://github.com/rdlowrey/auryn/tree/dev)!
+1. It has very low usage - so low, I'm not sure anyone uses it any more.
+2. I no longer regularly use PHP.
 
-Despite that, I still like this package even though it has relatively low utilisation these days. 
-My intent is to keep it tested and working on new PHP releases as they come out. This will involve
-minor updates to follow any feature deprecations.
+You may be able to find other forks of auryn but most also seem to be abandoned. This fork will
+work with PHP versions up to 8.5. Probably it will work with future versions as well, but it will
+not be tested.
 
-I also intend to keep it tested on as old a version of PHP as possible. The limiting factor is
-likely to be PHPUnit - eventually the version currently used (9.6) will not support the newest
-version of PHP, and I'll have to upgrade. At that point, this package will no longer be tested on
-the oldest versions of PHP, and may break. I'll annotate this in the `composer.json`.
+> In a new project I'd suggest using an implementation of PSR-11 instead of auryn.
 
-Significant API changes and new features are very unlikely to make it into the package. 
+The original version of this package - `rdlowrey/auryn` - was effectively abandoned many years ago.
+The current maintenance status of that package hasn't even make into `master` - it's only made it
+to the [dev branch](https://github.com/rdlowrey/auryn/tree/dev)!
 
 ## How It Works
 

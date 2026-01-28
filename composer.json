@@ -3,9 +3,6 @@
     "homepage": "https://github.com/martin-hughes/auryn",
     "description": "Auryn is a dependency injector for bootstrapping object-oriented PHP applications.",
     "keywords": ["dependency injection", "dic", "ioc"],
-    "replace": {
-        "rdlowrey/auryn": "1.4.4"
-    },
     "license": "MIT",
     "authors": [
         {
